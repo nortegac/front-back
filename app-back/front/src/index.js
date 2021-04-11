@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Jobs from "./components/Jobs";
+import JobsList from "./components/Jobs";
+import Form from "./components/Form"
 
-ReactDOM.render(<Jobs/>, document.getElementById("root"));
+ReactDOM.render(<Form/>, document.getElementById("root"))
+ReactDOM.render(<JobsList/>, document.getElementById("offers"));

@@ -1,26 +1,24 @@
-import React from 'react';
+import React, { useState } from "react";
 
-export default class Job extends React.Component {
-    state = {
-        "offer": this.props.offer
-    }
+const Job = (props) => {
+  const [offer] = useState({
+    name: props.offer.name,
+    company: props.offer.company,
+    salary: props.offer.salary,
+    city: props.offer.city,
+  });
 
-    renderOffer(){
-        return (
-          <div>
-            <h2>{this.state.offer.name}</h2>
-            <h3>{this.state.offer.company}</h3>
-            <h4>{this.state.offer.salary}</h4>
-            <h5>{this.state.offer.city}</h5>
-          </div>
-        );
-      }
-  
-    render() {
+  const renderOffer = () => {
     return (
       <div>
-        {this.renderOffer()}
+        <h2>{offer.name}</h2>
+        <h3>{offer.company}</h3>
+        <h4>{offer.salary}</h4>
+        <h5>{offer.city}</h5>
       </div>
     );
-  }
-}
+  };
+
+  return <div>{renderOffer()}</div>;
+};
+export default Job;
